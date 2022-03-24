@@ -16,15 +16,26 @@ const euroAlKm = 0.21
 
 const kmEffettuati = numeroKm * euroAlKm
 
-console.log(kmEffettuati);
-
 // sconto minorenni
+const scontoMinorenni = ((0.21 * 20) / 100)
+
+const saleMinorenni = (kmEffettuati * scontoMinorenni)
+
+//sconto over 65
+const scontoOver = ((0.21 * 40) / 100)
+
+const saleOver = (kmEffettuati * scontoOver)
+
+// Applico sconto
 if (eta < 18) {
-    ((kmEffettuati * 20) / 100)
+    (kmEffettuati * scontoMinorenni)
+    console.log('Il tuo prezzo da pagare è ' + saleMinorenni + ' euro');
 } else if (eta > 65) {
-    ((kmEffettuati * 40) / 100)
+    (kmEffettuati * scontoOver)
+    console.log('Il tuo prezzo da pagare è ' + saleOver + ' euro');
 } else {
     (kmEffettuati)
+    console.log('Il tuo prezzo da pagare è ' + kmEffettuati + ' euro');
 }
 
 // Output del prezzo finale
