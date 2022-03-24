@@ -26,12 +26,14 @@ const scontoOver = ((0.21 * 40) / 100)
 
 const saleOver = (kmEffettuati * scontoOver)
 
+Math.floor(Math.random() * 10)
+
 // Applico sconto
 if (eta < 18) {
-    (kmEffettuati * scontoMinorenni)
+    (saleMinorenni)
     console.log('Il tuo prezzo da pagare è ' + saleMinorenni + ' euro');
 } else if (eta > 65) {
-    (kmEffettuati * scontoOver)
+    (saleOver)
     console.log('Il tuo prezzo da pagare è ' + saleOver + ' euro');
 } else {
     (kmEffettuati)
