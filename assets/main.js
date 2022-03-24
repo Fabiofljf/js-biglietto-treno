@@ -14,30 +14,23 @@ const eta = prompt('Quanti anni hai?')
 //imposto i km
 const euroAlKm = 0.21
 
-const kmEffettuati = numeroKm * euroAlKm
+const prezzoCorsa = numeroKm * euroAlKm
+let prezzoFinale = prezzoCorsa
 
 // sconto minorenni
-const scontoMinorenni = ((0.21 * 20) / 100)
-
-const saleMinorenni = (kmEffettuati * scontoMinorenni)
+const scontoMinorenni = 20 / 100;
 
 //sconto over 65
-const scontoOver = ((0.21 * 40) / 100)
-
-const saleOver = (kmEffettuati * scontoOver)
-
-Math.floor(Math.random() * 10)
+const scontoOver = 40 / 100;
 
 // Applico sconto
 if (eta < 18) {
-    (saleMinorenni)
-    console.log('Il tuo prezzo da pagare è ' + saleMinorenni + ' euro');
+    prezzoFinale = prezzoCorsa - (prezzoCorsa * scontoMinorenni);
 } else if (eta > 65) {
-    (saleOver)
-    console.log('Il tuo prezzo da pagare è ' + saleOver + ' euro');
+    prezzoFinale = prezzoCorsa - (prezzoCorsa * scontoOver);
 } else {
-    (kmEffettuati)
-    console.log('Il tuo prezzo da pagare è ' + kmEffettuati + ' euro');
+    prezzoFinale = prezzoCorsa;
 }
 
-// Output del prezzo finale
+
+console.log('Il tuo prezzo da pagare è ' + prezzoFinale + ' euro');
